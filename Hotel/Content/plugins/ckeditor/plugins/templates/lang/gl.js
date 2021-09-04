@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("templates","gl",{button:"Modelos",emptyListMsg:"(Non hai Modelos definidos)",insertOption:"Substituír o contido actual",options:"Opcións de Modelos",selectPromptMsg:"Seleccione o Modelo a abrir no editor",title:"Modelos de contido"});

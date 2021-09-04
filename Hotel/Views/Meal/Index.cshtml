@@ -1,0 +1,38 @@
+﻿@model List<Hotel.Models.Meal>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div>
+    <a class="btn btn-danger" href="/Meal/Create">Add New Meal</a>
+</div>
+<br />
+<div class="bg-danger">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Meal Type</th>
+                <th scope="col">Low Season</th>
+                <th scope="col">High Season</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.meal_id</th>
+                    <td>@item.meal_name</td>
+                    <td>@item.low_season</td>
+                    <td>@item.high_season</td>
+                    <td>
+                        <a href="Meal/Edit/@item.meal_id" class="btn btn-info">Edit</a>
+                        <a href="Delete/@item.meal_id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

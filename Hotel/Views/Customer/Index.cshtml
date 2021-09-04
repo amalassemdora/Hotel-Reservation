@@ -1,0 +1,44 @@
+﻿@model List<Hotel.Models.customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <a class="btn btn-danger" href="/Customer/Create">Add New Customer</a>
+</div>
+<br />
+<div class="bg-danger">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Number of Room</th>
+                <th scope="col">Check In</th>
+                <th scope="col">Check Out</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.id</th>
+                    <td>@item.Name</td>
+                    <td>@item.Room_Type1.room_type1</td>
+                    <td>@item.room_Num</td>
+                    <td>@item.check_in</td>
+                    <td>@item.check_out</td>
+                    <td>
+                        <a href="~/customer/details/@item.id" class="btn btn-success">Details</a>
+                        <a href="~/customer/edit/@item.id" class="btn btn-info">Edit</a>
+                        <a href="~/customer/delete/@item.id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

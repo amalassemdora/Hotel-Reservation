@@ -1,0 +1,133 @@
+﻿@model Hotel.Models.customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Details", "Customer", FormMethod.Post, new { @class = "form-group" }))
+{
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.Name, "Name", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.email, "Email", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.email, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.country, "Country", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.country, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.adults, "Adults", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.adults, new { @class = "form-control", Type = "number", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.children, "Children", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.children, new { @class = "form-control", Type = "number", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.room_type, "Type of Room", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.room_type, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.meal_id, "Type of Meal", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.meal_id, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.check_in, "Check In", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.check_in, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.check_out, "Check Out", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.check_out, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.room_Num, "Room Number", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.room_Num, new { @class = "form-control", Type = "number", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-lg-1">
+            <a href="~/customer/index" class="btn btn-success">Return</a>
+        </div>
+        <div class="col-lg-1">
+            <a href="~/customer/edit/@Model.id" class="btn btn-info">Edit</a>
+        </div>
+        <div class="col-lg-1">
+            <a href="~/customer/delete/@Model.id" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+
+            }
