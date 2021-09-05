@@ -14,7 +14,7 @@
     <Property Name="meal_id" Type="int" Nullable="false" />
     <Property Name="check_in" Type="date" />
     <Property Name="check_out" Type="date" />
-    <Property Name="room_Num" Type="int" />
+    <Property Name="room_Num" Type="int" Nullable="false" />
     <Property Name="cost" Type="money" />
   </EntityType>
   <EntityType Name="Meal">
@@ -65,7 +65,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_customer_Room">
-    <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Room">

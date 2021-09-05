@@ -1,0 +1,39 @@
+﻿
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                var d = "Amal Assem";
+                //$.ajax({
+                //    url: "/Test/Display",
+                //    data: {name:d},
+                //    success: function (x) {
+                //        $("#div1").text(x);
+                //    }
+                //});
+
+                //Ajax Helper
+                $.get("/Test/Display", { name: d }, function (x) {
+                        $("#div1").text(x);
+                    })
+            });
+        });
+    </script>
+
+    <title>index</title>
+</head>
+<body>
+    <div>
+        <input type="button" value="Get Data" id="btn" />
+        <div id="div1">
+
+        </div>
+    </div>
+</body>
+</html>
+
+

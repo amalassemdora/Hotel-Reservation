@@ -37,7 +37,7 @@
     <Property Name="meal_id" Type="Int32" Nullable="false" />
     <Property Name="check_in" Type="DateTime" Precision="0" />
     <Property Name="check_out" Type="DateTime" Precision="0" />
-    <Property Name="room_Num" Type="Int32" />
+    <Property Name="room_Num" Type="Int32" Nullable="false" />
     <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="Meal" Relationship="Divers_HotelModel.FK_customer_Meal" FromRole="customer" ToRole="Meal" />
     <NavigationProperty Name="Room" Relationship="Divers_HotelModel.FK_customer_Room" FromRole="customer" ToRole="Room" />
@@ -96,7 +96,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_customer_Room">
-    <End Type="Divers_HotelModel.Room" Role="Room" Multiplicity="0..1" />
+    <End Type="Divers_HotelModel.Room" Role="Room" Multiplicity="1" />
     <End Type="Divers_HotelModel.customer" Role="customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Room">

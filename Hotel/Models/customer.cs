@@ -24,7 +24,7 @@ namespace Hotel.Models
         public int meal_id { get; set; }
         public Nullable<System.DateTime> check_in { get; set; }
         public Nullable<System.DateTime> check_out { get; set; }
-        public Nullable<int> room_Num { get; set; }
+        public int room_Num { get; set; }
         public Nullable<decimal> cost { get; set; }
     
         public virtual Meal Meal { get; set; }

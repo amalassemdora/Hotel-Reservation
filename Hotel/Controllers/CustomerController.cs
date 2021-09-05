@@ -71,5 +71,12 @@ namespace Hotel.Controllers
             }
         }
 
+        public JsonResult GetRoom(int roomtype)
+		{
+            db.Configuration.ProxyCreationEnabled = false;
+            var data = db.Rooms.Where(m => m.room_type == roomtype).ToList();
+            return Json(data, JsonRequestBehavior.AllowGet);
+		}
+
     }
 }

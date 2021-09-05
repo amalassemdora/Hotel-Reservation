@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="933f74b968a74452989b16123ed7b3b8" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="Divers_HotelModel.customer" Width="1.5" PointX="5.25" PointY="5.625" />
-        <EntityTypeShape EntityType="Divers_HotelModel.Meal" Width="1.5" PointX="3" PointY="5.625" />
-        <EntityTypeShape EntityType="Divers_HotelModel.Room" Width="1.5" PointX="3" PointY="8.75" />
-        <EntityTypeShape EntityType="Divers_HotelModel.Room_Type" Width="1.5" PointX="7.75" PointY="7" />
-        <EntityTypeShape EntityType="Divers_HotelModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="Divers_HotelModel.customer" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="Divers_HotelModel.Meal" Width="1.5" PointX="7.25" PointY="5.875" />
+        <EntityTypeShape EntityType="Divers_HotelModel.Room" Width="1.5" PointX="3.25" PointY="7" />
+        <EntityTypeShape EntityType="Divers_HotelModel.Room_Type" Width="1.5" PointX="3.25" PointY="4.75" />
+        <EntityTypeShape EntityType="Divers_HotelModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="Divers_HotelModel.FK_customer_Meal" />
         <AssociationConnector Association="Divers_HotelModel.FK_customer_Room" />
         <AssociationConnector Association="Divers_HotelModel.FK_customer_Room_Type" />

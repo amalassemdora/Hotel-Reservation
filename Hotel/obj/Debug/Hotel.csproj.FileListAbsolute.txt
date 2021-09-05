@@ -73,3 +73,4 @@ G:\ElAmal Hotel\Hotel\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
 G:\ElAmal Hotel\Hotel\Hotel\obj\Debug\Hotel.csproj.CopyComplete
 G:\ElAmal Hotel\Hotel\Hotel\obj\Debug\Hotel.dll
 G:\ElAmal Hotel\Hotel\Hotel\obj\Debug\Hotel.pdb
+G:\ElAmal Hotel\Hotel\Hotel\obj\Debug\Hotel.csprojAssemblyReference.cache

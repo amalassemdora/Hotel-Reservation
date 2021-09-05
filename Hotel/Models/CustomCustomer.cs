@@ -14,7 +14,6 @@ namespace Hotel.Models
         public int id { get; set; }
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Room type is required")]
         [EmailAddress(ErrorMessage = "Email must be like[example@example.com]")]
         public string email { get; set; }
         public string country { get; set; }
@@ -24,11 +23,15 @@ namespace Hotel.Models
         public int room_type { get; set; }
         [Required(ErrorMessage = "Meal type is required")]
         public int meal_id { get; set; }
+
         [Required(ErrorMessage = "Check in date is required")]
         public Nullable<System.DateTime> check_in { get; set; }
+
         [Required(ErrorMessage = "Check out date is required")]
         public Nullable<System.DateTime> check_out { get; set; }
-        public Nullable<int> room_Num { get; set; }
+
+        [Required(ErrorMessage = "Room number is required")]
+        public int room_Num { get; set; }
         public Nullable<decimal> cost { get; set; }
 
         public virtual Meal Meal { get; set; }
