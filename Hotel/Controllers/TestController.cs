@@ -17,10 +17,15 @@ namespace Hotel.Controllers
         //{
         //          return "Welcome "+ name;
         //}
+        /* *****************Ajax*****************
         public JsonResult Display(string name)
         {
             var data = "Welcome " + name;
             return Json(data,JsonRequestBehavior.AllowGet);
-        }
+        }*/
+        public ActionResult Search()
+		{
+            return View();
+		}
     }
 }

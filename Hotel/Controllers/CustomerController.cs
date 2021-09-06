@@ -14,7 +14,13 @@ namespace Hotel.Controllers
         Divers_HotelEntities db = new Divers_HotelEntities();
         public ActionResult Index()
         {
+            ViewBag.id = 0;
             ViewBag.customer = db.customers.AsNoTracking().ToList();
+            return View(ViewBag.customer);
+        }
+        public ActionResult Search(string txt)
+        {
+            ViewBag.customer = db.customers.Where(c=>c.Name.Contains(txt)).ToList();
             return View(ViewBag.customer);
         }
         public ActionResult Details(int id)

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width" />
     <script src="~/Scripts/jquery-3.6.0.js"></script>
     <script>
-        $(function () {
+        ///*******************Json************************
+      /*  $(function () {
             $("#btn").click(function () {
                 var d = "Amal Assem";
                 //$.ajax({
@@ -21,18 +22,33 @@
                         $("#div1").text(x);
                     })
             });
-        });
+        });*/
     </script>
 
     <title>index</title>
 </head>
 <body>
     <div>
-        <input type="button" value="Get Data" id="btn" />
+
+        @* Ajax
+                <input type="button" value="Get Data" id="btn" />
+            <div id="div1">
+
+            </div>*@
+
+
+        @*******************Search****************@
+        @using (Ajax.BeginForm("Search", "Test",new AjaxOptions {UpdateTargetId="div1"}))
+        {
+            <input type="submit" value="Search" />
+        }
         <div id="div1">
 
         </div>
     </div>
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
 </body>
 </html>
 
