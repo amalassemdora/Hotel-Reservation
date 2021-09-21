@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Divers_HotelModelStoreContainer" CdmEntityContainer="Divers_HotelEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="Divers_HotelModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="Divers_HotelModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="room_Num" ColumnName="room_Num" />
+          <ScalarProperty Name="check_out" ColumnName="check_out" />
+          <ScalarProperty Name="check_in" ColumnName="check_in" />
+          <ScalarProperty Name="meal_id" ColumnName="meal_id" />
+          <ScalarProperty Name="room_type" ColumnName="room_type" />
+          <ScalarProperty Name="children" ColumnName="children" />
+          <ScalarProperty Name="adults" ColumnName="adults" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meals">
+      <EntityTypeMapping TypeName="Divers_HotelModel.Meal">
+        <MappingFragment StoreEntitySet="Meal">
+          <ScalarProperty Name="high_season" ColumnName="high_season" />
+          <ScalarProperty Name="low_season" ColumnName="low_season" />
+          <ScalarProperty Name="meal_name" ColumnName="meal_name" />
+          <ScalarProperty Name="meal_id" ColumnName="meal_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="Divers_HotelModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="reserved" ColumnName="reserved" />
+          <ScalarProperty Name="room_type" ColumnName="room_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room_Type">
+      <EntityTypeMapping TypeName="Divers_HotelModel.Room_Type">
+        <MappingFragment StoreEntitySet="Room_Type">
+          <ScalarProperty Name="room_type1" ColumnName="room_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Divers_HotelModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

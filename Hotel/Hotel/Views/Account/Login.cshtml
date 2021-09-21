@@ -1,0 +1,62 @@
+﻿@model Hotel.Models.Admin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="~/Content/favicon.png" type="image/x-icon">
+    <!-- Bootstrap Core Css -->
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/css/Admin.css" rel="stylesheet" />
+
+</head>
+<body > 
+    
+    <div class="reg">
+        <div class="text-center">
+            <img src="~/Content/favicon.png" /><span class="Royal">Royal Hotel</span>
+        </div>
+        <br />
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-group" }))
+                {
+                    <div class="row">
+                        <div class="col-lg-3">
+                            @Html.LabelFor(Model => Model.Email, "Email:")
+                        </div>
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control", Type = "text" })
+                        </div>
+                        <div class="col-lg-12">
+                            @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-3">
+                            @Html.LabelFor(Model => Model.Password, "Password:")
+                        </div>
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control", Type = "text" })
+                        </div>
+                        <div class="col-lg-12">
+                            @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <center>
+                        <input type="submit" class="btn btn-circle btn-primary" value="Log In" />
+                    </center>
+                 }
+            </div>
+        <script src="~/Scripts/jquery-3.6.0.js"></script>
+        <script src="~/Scripts/jquery-1.8.0.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+</body>
+</html>

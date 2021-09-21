@@ -1,0 +1,162 @@
+﻿@model Hotel.Models.customer
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post, new { @class = "form-group" }))
+{
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.Name, "Name", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control", Type = "text" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.Name, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.email, "Email", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.email, new { @class = "form-control", Type = "text" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.email, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.country, "Country", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.country, new { @class = "form-control", Type = "text" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.country, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.adults, "Adults", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(Model => Model.adults, new List<SelectListItem>() { new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" } }, new { @class = "form-control", Type = "number" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.adults, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.children, "Children", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(Model => Model.children, new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" } }, new { @class = "form-control", Type = "number" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.children, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.room_type, "Type of Room", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(Model => Model.room_type, (SelectList)ViewBag.RoomType, "Choose Room Type", new { @class = "form-control", Type = "text", @id = "RoomType" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.room_type, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.meal_id, "Type of Meal", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(Model => Model.meal_id, (SelectList)ViewBag.MealType, "Choose Meal Type", new { @class = "form-control", Type = "text" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.meal_id, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.check_in, "Check In", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.check_in, new { @class = "form-control", Type = "date" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.check_in, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.check_out, "Check Out", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.check_out, new { @class = "form-control", Type = "date" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.check_out, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.room_Num, "Room Number", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            <select name="room_Num" id="room_Num" class="form-control">
+                <option>Choose Room</option>
+            </select>
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.room_Num, null, new { @class = "text=danger" })
+        </div>
+    </div>    
+    <br />
+    <input type="submit" class="btn btn-danger" value="Save" />
+
+}
+@section Scripts{
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $(function () {
+            $("#RoomType").change(function () {
+                $("#room_Num").empty();
+                var RType = $("#RoomType").val();
+                var txt = "Choose Room";
+                $("#room_Num").append(
+                    "<option>" + txt + "</option>"
+                )
+                $.ajax({
+                    url: "/Customer/GetRoom",
+                    data: { _roomtype: RType },
+                    success: function (data) {
+                        $.each(data, function (index, row) {
+                            $("#room_Num").append(
+                                "<option value='" + row.id + "'>" + row.id + "</option>"
+                            )
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

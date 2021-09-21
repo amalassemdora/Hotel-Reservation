@@ -1,0 +1,39 @@
+﻿@model List<Hotel.Models.Room_Type>
+@{
+    ViewBag.Title = "Room Type";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <a class="btn btn-danger" href="/RoomType/Create">Add New Room Type</a>
+</div>
+<br />
+<div class="bg-danger">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Room Type</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 1;
+            }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@index</th>
+                    <td>@item.room_type1</td>
+                    <td>
+                        <a href="~/RoomType/Edit/@item.id" class="btn btn-info">Edit</a>
+                        <a href="~/RoomType/Delete/@item.id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                index = index + 1;
+            }
+        </tbody>
+    </table>
+</div>
+

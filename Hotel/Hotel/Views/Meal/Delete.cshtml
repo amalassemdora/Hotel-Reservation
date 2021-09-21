@@ -1,0 +1,47 @@
+﻿@model Hotel.Models.Meal
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h3 class="text-danger">@ViewBag.msg</h3>
+@using (Html.BeginForm("Delete", "Meal", FormMethod.Post, new { @class = "form-group" }))
+{
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.meal_name, "Meal Name", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.meal_name, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.low_season, "Low Season", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.low_season, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.high_season, "High Season", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.high_season, new { @class = "form-control", Type = "text", disabled = "disabled" })
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <input type="submit" class="btn btn-danger" value="Delete" />
+    
+}
+

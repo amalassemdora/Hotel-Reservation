@@ -1,0 +1,18 @@
+﻿body {
+    background-image: url("../images/banner_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 480px;
+}
+.reg {
+    width: 30%;
+    background-color: white;
+    margin: 10% auto;
+    padding:15px;
+    opacity: 0.80;
+}
+.Royal {
+    font-size: larger;
+    font-weight: bolder;
+}
+

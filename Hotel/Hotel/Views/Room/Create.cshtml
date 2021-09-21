@@ -1,0 +1,55 @@
+﻿@model Hotel.Models.Room
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Room", FormMethod.Post, new { @class = "form-group" }))
+{
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.room_type, "Room Type", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(Model => Model.room_type, (SelectList)ViewBag.RoomType, "Choose Room Type", new { @class = "form-control", Type = "text", @id = "RoomType" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.room_type, null, new { @class = "text=danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.reserved, "Reserved", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.DropDownListFor(Model => Model.reserved, new List<SelectListItem>() { new SelectListItem { Text = "True", Value = "True" }, new SelectListItem { Text = "False", Value = "False" } }, new { @class = "form-control", Type = "text" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.reserved, null, new { @class = "text=danger" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.LabelFor(Model => Model.price, "Price", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.TextBoxFor(Model => Model.price, new { @class = "form-control", Type = "text" })
+        </div>
+        <div class="col-lg-4">
+            @Html.ValidationMessageFor(Model => Model.price, null, new { @class = "text=danger" })
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <input type="submit" class="btn btn-danger" value="Save" />
+
+}
+@section Scripts{
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
+

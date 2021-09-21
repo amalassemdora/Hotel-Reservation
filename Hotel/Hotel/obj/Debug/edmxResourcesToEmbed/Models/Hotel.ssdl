@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Divers_HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="adults" Type="int" />
+    <Property Name="children" Type="int" />
+    <Property Name="room_type" Type="int" Nullable="false" />
+    <Property Name="meal_id" Type="int" Nullable="false" />
+    <Property Name="check_in" Type="date" />
+    <Property Name="check_out" Type="date" />
+    <Property Name="room_Num" Type="int" Nullable="false" />
+    <Property Name="cost" Type="money" />
+  </EntityType>
+  <EntityType Name="Meal">
+    <Key>
+      <PropertyRef Name="meal_id" />
+    </Key>
+    <Property Name="meal_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="meal_name" Type="varchar" MaxLength="20" />
+    <Property Name="low_season" Type="int" />
+    <Property Name="high_season" Type="int" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="room_type" Type="int" />
+    <Property Name="reserved" Type="bit" Nullable="false" />
+    <Property Name="price" Type="money" />
+  </EntityType>
+  <EntityType Name="Room_Type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="room_type" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_customer_Meal">
+    <End Role="Meal" Type="Self.Meal" Multiplicity="1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meal">
+        <PropertyRef Name="meal_id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="meal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="room_Num" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_Room_Type">
+    <End Role="Room_Type" Type="Self.Room_Type" Multiplicity="1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room_Type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="room_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Room_Room_Type">
+    <End Role="Room_Type" Type="Self.Room_Type" Multiplicity="0..1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room_Type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Room">
+        <PropertyRef Name="room_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Divers_HotelModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Meal" EntityType="Self.Meal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room_Type" EntityType="Self.Room_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_customer_Meal" Association="Self.FK_customer_Meal">
+      <End Role="Meal" EntitySet="Meal" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_Room" Association="Self.FK_customer_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_Room_Type" Association="Self.FK_customer_Room_Type">
+      <End Role="Room_Type" EntitySet="Room_Type" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Room_Room_Type" Association="Self.FK_Room_Room_Type">
+      <End Role="Room_Type" EntitySet="Room_Type" />
+      <End Role="Room" EntitySet="Room" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
